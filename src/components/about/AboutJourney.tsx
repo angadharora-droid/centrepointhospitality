@@ -31,8 +31,10 @@ export function AboutJourney() {
         </Reveal>
 
         <ol className="border-t border-ink/15">
-          {content.milestones.map((milestone) => {
-            const image = milestone.image && milestone.image.src !== aboutHero.image.src ? milestone.image : null;
+          {content.chapters.map((milestone) => {
+            const group = "entries" in milestone ? milestone.entries : null;
+            const ownImage = "entries" in milestone ? undefined : milestone.image;
+            const image = ownImage && ownImage.src !== aboutHero.image.src ? ownImage : null;
             const imageLeft = image ? imageIndex++ % 2 === 1 : false;
             return (
               <Reveal
@@ -47,12 +49,26 @@ export function AboutJourney() {
 
                 <RevealItem
                   className={cn(
-                    "col-span-full md:col-span-5 lg:col-span-4",
-                    image && imageLeft ? "lg:col-start-9" : "lg:col-start-5",
+                    "col-span-full md:col-span-5",
+                    group ? "lg:col-span-7 lg:col-start-5" : "lg:col-span-4",
+                    !group && (image && imageLeft ? "lg:col-start-9" : "lg:col-start-5"),
                   )}
                 >
                   <h3 className="font-display text-heading">{milestone.title}</h3>
-                  <p className="mt-4 max-w-[32rem] text-ink/80 md:text-[1.0625rem] md:leading-[1.7]">{milestone.body}</p>
+                  {"entries" in milestone ? (
+                    // One chapter, its years kept as a short run of dated notes.
+                    <ol className="mt-6 grid gap-x-(--spacing-grid) gap-y-6 lg:grid-cols-3">
+                      {milestone.entries.map((entry) => (
+                        <li key={entry.year} className="border-t border-ink/15 pt-4">
+                          <p className="eyebrow text-stone tabular-nums">{entry.year}</p>
+                          <h4 className="mt-3 font-display text-title">{entry.title}</h4>
+                          <p className="mt-2 text-ink/80">{entry.body}</p>
+                        </li>
+                      ))}
+                    </ol>
+                  ) : (
+                    <p className="mt-4 max-w-[32rem] text-ink/80 md:text-[1.0625rem] md:leading-[1.7]">{milestone.body}</p>
+                  )}
                 </RevealItem>
 
                 {image && (

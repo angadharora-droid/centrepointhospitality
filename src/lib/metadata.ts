@@ -7,7 +7,7 @@ const shareImage = {
   url: "/og/cph-share.jpg",
   width: 1200,
   height: 630,
-  alt: "Centre Point Hospitality logo over a rooftop bar at dusk.",
+  alt: "Centre Point Hospitality logo over High Steaks, the rooftop at Hotel Centre Point, at dusk.",
 };
 
 /** The homepage title, also the default for any page without its own. */

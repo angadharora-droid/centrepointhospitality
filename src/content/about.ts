@@ -1,5 +1,6 @@
 import teamNamaste from "@/assets/journey/team-namaste.jpg";
 import { development, philosophy, timeline } from "./home";
+import type { TimelineEntry } from "./types";
 import { leadership } from "./people";
 
 /**
@@ -71,11 +72,28 @@ export const aboutPhilosophy = {
   principles: philosophy.principles.map((principle) => principle.title),
 };
 
+/** A run of timeline entries read together as one chapter. */
+export type TimelineChapter = { year: string; title: string; entries: TimelineEntry[] };
+
+// The early diversification years read as one chapter. Every underlying entry
+// (year, title, body) is kept and shown inside it — nothing is dropped.
+const earlyYears = new Set(["1995", "1997–2000", "2000–2010"]);
+const earlyChapter: TimelineChapter = {
+  year: "1995–2010",
+  title: "Widening the base.",
+  entries: timeline.filter((entry) => earlyYears.has(entry.year)),
+};
+
+const chapters = timeline.flatMap<TimelineEntry | TimelineChapter>((entry) => {
+  if (!earlyYears.has(entry.year)) return [entry];
+  return entry === earlyChapter.entries[0] ? [earlyChapter] : [];
+});
+
 export const aboutJourney = {
   eyebrow: "Our journey",
   heading: ["Over three decades,", "one milestone", "at a time."],
   emphasis: "milestone",
-  milestones: timeline,
+  chapters,
 };
 
 /** The principal leadership team, in the order the group presents it. */

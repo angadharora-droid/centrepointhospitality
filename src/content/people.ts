@@ -13,7 +13,8 @@ export const leadership: Person[] = [
   {
     slug: "micky-arora",
     name: "Jasbir Singh Arora",
-    role: "Managing Director · Businessman & Founder",
+    // "Founder" per his approved biography; "Managing Director" per Nation Next (2019, 2020) coverage.
+    role: "Founder & Managing Director",
     bio: [
       "Jasbir Singh Arora is a self-made businessman and visionary Founder whose journey reflects courage, resilience, and transformational leadership. Born and brought up in Nagpur, he has played a defining role in shaping the city’s modern hospitality landscape.",
       "A Commerce & Finance graduate from Hislop College, Nagpur, Mr. Arora began his business journey at a very young age. From building trading ventures to securing competitive automobile agencies and pioneering innovative workshop services, his early years were driven by relentless effort and sharp business insight. He personally trained, traveled extensively, and built operations from the ground up — laying a powerful foundation for long-term success.",

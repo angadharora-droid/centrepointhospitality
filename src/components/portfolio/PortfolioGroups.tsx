@@ -55,12 +55,44 @@ export function PortfolioGroups({ active }: { active?: PortfolioCategory }) {
                       <p className="mt-5 eyebrow text-stone">{[brand.type, brand.location].filter(Boolean).join(" · ")}</p>
                       <h3 className="mt-3 font-display text-[clamp(1.75rem,1.4rem+1vw,2.5rem)] leading-[1.05] tracking-[-0.01em]">{brand.name}</h3>
                       <p className="mt-3 max-w-[30rem] text-stone">{brand.summary}</p>
-                      {brand.links?.map((link) => (
-                        <ArrowLink key={link.href} href={link.href} external className="mt-5 mr-8">
-                          {link.label}
-                          <span className="sr-only"> — {brand.name}</span>
-                        </ArrowLink>
-                      ))}
+                      {brand.links && (
+                        <div className="mt-5 flex flex-wrap gap-x-8 gap-y-4">
+                          {brand.links.map((link) => (
+                            <ArrowLink key={link.href} href={link.href} external>
+                              {link.label}
+                              <span className="sr-only"> — {brand.name}</span>
+                            </ArrowLink>
+                          ))}
+                        </div>
+                      )}
+                      {/* Listing and delivery platforms stay one quiet step away — this is a brand portfolio, not a directory. */}
+                      {brand.moreLinks && (
+                        <details className="group/more mt-6">
+                          <summary className="inline-flex min-h-6 cursor-pointer list-none items-center gap-2 eyebrow text-stone transition-colors duration-(--duration-base) hover:text-ink [&::-webkit-details-marker]:hidden">
+                            More links
+                            <span aria-hidden="true" className="inline-block transition-transform duration-(--duration-base) ease-editorial group-open/more:rotate-45">
+                              +
+                            </span>
+                            <span className="sr-only"> for {brand.name}</span>
+                          </summary>
+                          <ul className="mt-4 space-y-2 border-l border-line pl-4 text-small">
+                            {brand.moreLinks.map((link) => (
+                              <li key={link.href}>
+                                <a
+                                  href={link.href}
+                                  target="_blank"
+                                  rel="noopener noreferrer"
+                                  className="text-stone underline decoration-current/30 underline-offset-[0.3em] transition-colors duration-(--duration-base) hover:text-ink"
+                                >
+                                  {link.label}
+                                  <span aria-hidden="true"> ↗</span>
+                                  <span className="sr-only"> (opens in a new tab)</span>
+                                </a>
+                              </li>
+                            ))}
+                          </ul>
+                        </details>
+                      )}
                     </RevealItem>
                   ))}
                 </ul>

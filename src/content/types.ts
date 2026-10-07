@@ -50,7 +50,10 @@ export type Brand = {
   summary: string;
   image: ImageAsset;
   logo?: ImageAsset;
+  /** Up to three primary actions (official site, Instagram, directions, reservations). */
   links?: { label: string; href: string }[];
+  /** Listing and delivery platforms — kept out of the card, behind "More links +". */
+  moreLinks?: { label: string; href: string }[];
 };
 
 export type Person = {

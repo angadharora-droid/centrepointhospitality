@@ -15,23 +15,28 @@ const SCROLL_PER_MILESTONE = 70;
 const HOLD = 0.05;
 
 /**
- * Desktop: vertical scroll drives a horizontal row of chapters inside a sticky
- * viewport. The track only translates (no layout per frame) and the section
- * releases on its own once the last chapter is in place. Reduced motion gets
- * the stacked chronology instead.
+ * The one rendered timeline. The server (and mobile, tablet and reduced
+ * motion) gets the stacked chronology; on desktop with motion allowed it is
+ * replaced after hydration by the sticky sideways row. Only one of the two is
+ * ever in the DOM, so the milestones are never duplicated for search engines
+ * or assistive technology.
  */
 export function JourneyScroller({ milestones }: { milestones: TimelineEntry[] }) {
+  const desktop = useMediaQuery("(min-width: 64rem)");
   const reduceMotion = useMediaQuery("(prefers-reduced-motion: reduce)");
-  if (reduceMotion) {
-    return (
-      <Container className="pb-section">
-        <JourneyChronology milestones={milestones} />
-      </Container>
-    );
-  }
-  return <StickyJourney milestones={milestones} />;
+  if (desktop && !reduceMotion) return <StickyJourney milestones={milestones} />;
+  return (
+    <Container className="pt-10 pb-section lg:pt-0">
+      <JourneyChronology milestones={milestones} />
+    </Container>
+  );
 }
 
+/**
+ * Desktop: vertical scroll drives a horizontal row of chapters inside a sticky
+ * viewport. The track only translates (no layout per frame) and the section
+ * releases on its own once the last chapter is in place.
+ */
 function StickyJourney({ milestones }: { milestones: TimelineEntry[] }) {
   const wrapper = useRef<HTMLDivElement>(null);
   const track = useRef<HTMLOListElement>(null);

@@ -1,4 +1,5 @@
 import rooftopBarDusk from "@/assets/hero/rooftop-bar-dusk.jpg";
+import rooftopDiningNight from "@/assets/hero/rooftop-dining-night.jpg";
 import { development } from "./home";
 import { getBrand, type BrandSlug } from "./portfolio";
 import { emailFor } from "./contact";
@@ -18,7 +19,7 @@ export const developmentHero = {
   note: "Hotels, restaurants and hospitality concepts shaped around the opportunity — not a fixed template.",
   image: {
     src: rooftopBarDusk,
-    alt: "A rooftop bar at dusk: a white pergola over a lit counter, planted walls and the city skyline beyond.",
+    alt: "High Steaks, the rooftop at Hotel Centre Point, at dusk: a white pergola over the lit bar, planted walls and the Nagpur skyline.",
     focus: "62% 55%",
   },
 };
@@ -28,21 +29,19 @@ export const proposition = {
   statement: ["More than", "an operator."],
   emphasis: "operator",
   text: "CPH brings together what owners usually source separately: hospitality operations, brand and concept thinking, commercial discipline, and an understanding of the guest and the local market.",
-  pillars: [
-    "Hospitality operations",
-    "Brand thinking",
-    "Commercial discipline",
-    "Guest experience",
-    "Local understanding",
-    "Concept development",
-  ],
+  // The group's own photography: a full service evening at High Steaks, Hotel Centre Point.
+  image: {
+    src: rooftopDiningNight,
+    alt: "Guests dining at High Steaks, the rooftop at Hotel Centre Point, at night, with the bar team at work behind them.",
+    focus: "50% 60%",
+  },
 };
 
 export const partnershipModels = {
   eyebrow: "Partnership models",
   heading: ["Ways we", "work together."],
   emphasis: "together",
-  intro: "Each engagement is shaped around the asset and the owner’s ambitions. Terms are agreed project by project.",
+  intro: "Shaped around each asset and owner. Terms are agreed project by project.",
   // The same six areas shown on the homepage — one source of truth.
   models: development.areas,
 };
@@ -52,14 +51,14 @@ export const capabilities = {
   heading: ["Across the whole", "lifecycle."],
   emphasis: "lifecycle",
   items: [
-    { title: "Strategy & Feasibility", text: "Reading the site, the market and the opportunity before anything is designed." },
-    { title: "Concept Development", text: "Shaping what the place is, who it is for and why they will return." },
-    { title: "Brand Positioning", text: "Names, identities and guest journeys that hold together." },
-    { title: "Pre-opening Planning", text: "The plan, budget and sequence that take a project to opening day." },
-    { title: "Recruitment & Training", text: "Building teams and the standards they work to." },
-    { title: "F&B Strategy", text: "Menus, formats and outlets that suit the property and its guests." },
-    { title: "Operating Systems", text: "Processes, controls and reporting that keep service consistent." },
-    { title: "Revenue & Sales", text: "Pricing, distribution and the sales effort behind rooms, covers and events." },
+    { title: "Strategy & Feasibility", text: "Site, market and opportunity — read first." },
+    { title: "Concept Development", text: "What the place is, and who it is for." },
+    { title: "Brand Positioning", text: "Names, identities and guest journeys." },
+    { title: "Pre-opening Planning", text: "Plan, budget and sequence to opening day." },
+    { title: "Recruitment & Training", text: "Teams and the standards they keep." },
+    { title: "F&B Strategy", text: "Menus, formats and outlets that fit." },
+    { title: "Operating Systems", text: "Processes, controls and reporting." },
+    { title: "Revenue & Sales", text: "Pricing, distribution and sales." },
   ],
 };
 

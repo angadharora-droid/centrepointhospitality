@@ -3,7 +3,6 @@ import { Container } from "@/components/layout/Container";
 import { Reveal, RevealItem } from "@/components/motion/Reveal";
 import { Emphasis } from "@/components/typography/Emphasis";
 import { journey as content } from "@/content/home";
-import { JourneyChronology } from "./JourneyChronology";
 import { JourneyScroller } from "./JourneyScroller";
 
 const TITLE_ID = "journey-title";
@@ -11,7 +10,7 @@ const TITLE_ID = "journey-title";
 /**
  * "Our journey" — the group's chronology. Desktop browses the chapters
  * sideways inside a sticky viewport; mobile, tablet and reduced motion read
- * them top to bottom. The same ordered list of milestones serves both.
+ * them top to bottom. JourneyScroller renders exactly one of the two.
  */
 export function Journey() {
   return (
@@ -47,15 +46,7 @@ export function Journey() {
         </Reveal>
       </Container>
 
-      <div className="lg:hidden">
-        <Container className="pt-10 pb-section">
-          <JourneyChronology milestones={content.milestones} />
-        </Container>
-      </div>
-
-      <div className="hidden lg:block">
-        <JourneyScroller milestones={content.milestones} />
-      </div>
+      <JourneyScroller milestones={content.milestones} />
     </section>
   );
 }

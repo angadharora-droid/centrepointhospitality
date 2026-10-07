@@ -34,7 +34,8 @@ const follow: FooterGroup = {
   links: [
     { label: "Centre Point Hospitality", href: "https://www.instagram.com/centrepointhospitality/?hl=en", note: "Instagram", external: true },
     { label: "Centre Point Hospitality", href: "https://in.linkedin.com/company/centre-point-group-of-hotels", note: "LinkedIn", external: true },
-    { label: "Centre Point Hotels & Resorts", href: "https://www.facebook.com/centrepointhotelsandresorts/", note: "Facebook", external: true },
+    // The page names itself "Centre Point Hospitality" (handle: centrepointhotelsandresorts).
+    { label: "Centre Point Hospitality", href: "https://www.facebook.com/centrepointhotelsandresorts/", note: "Facebook", external: true },
     { label: "Pablo", href: "https://www.instagram.com/pablonagpur/", note: "Instagram", external: true },
     { label: "Dali", href: "https://www.instagram.com/dali_theartcafe/", note: "Instagram", external: true },
     { label: "High Steaks", href: "https://www.instagram.com/highsteaksnagpur/", note: "Instagram", external: true },

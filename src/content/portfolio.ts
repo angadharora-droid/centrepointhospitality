@@ -1,10 +1,10 @@
-import hotelRoom from "@/assets/hero/hotel-room.jpg";
+import hcpLobby from "@/assets/hotel-centre-point/lobby-reception.jpg";
+import highSteaksPool from "@/assets/high-steaks/rooftop-pool-night.jpg";
+import naviMumbaiAtrium from "@/assets/navi-mumbai/atrium.jpg";
 import restaurantMural from "@/assets/hero/restaurant-mural.jpg";
 import daliGuests from "@/assets/portfolio/dali-guests.jpg";
-import placeholderHighSteaks from "@/assets/portfolio/placeholders/placeholder-high-steaks.jpg";
 import mickysProducts from "@/assets/portfolio/mickys-products.jpg";
 import mickysLogo from "@/assets/portfolio/mickys-logo.png";
-import centrePointNaviMumbaiLogo from "@/assets/portfolio/centre-point-navi-mumbai-logo-card.png";
 import centrePointAmravatiFacade from "@/assets/portfolio/centre-point-amravati-facade.webp";
 import freakkDeBistro from "@/assets/portfolio/freakk-de-bistro.webp";
 import puroSoulBottle from "@/assets/portfolio/puro-soul-bottle.jpeg";
@@ -24,12 +24,11 @@ export const brands = [
     type: "Hotel",
     location: "Nagpur",
     summary: "Where the group began in 1988 — home to Palacio, a 10,000 sq ft pillarless hall.",
+    // From centrepointnagpur.com (the hotel's official site).
     image: {
-      src: hotelRoom,
-      alt: "A guest room with a timber-panelled wall and a rose upholstered bed.",
-      focus: "62% 55%",
-      // Temporary: room photograph from the current site; property not confirmed.
-      placeholder: true,
+      src: hcpLobby,
+      alt: "The reception desk and lobby of Hotel Centre Point, Nagpur, with the front-office team at work.",
+      focus: "35% 55%",
     },
     links: [{ label: "Official website", href: "https://centrepointnagpur.com/" }],
   },
@@ -48,11 +47,13 @@ export const brands = [
     links: [
       { label: "Instagram", href: "https://www.instagram.com/pablonagpur/" },
       { label: "Directions", href: "https://www.google.com/maps/search/?api=1&query=240%2FA%2C+E+High+Ct+Rd%2C+Civil+Lines%2C+Nagpur%2C+Maharashtra+440001" },
+      { label: "Reserve a table", href: "https://www.google.com/maps/reserve/v/dine/c/aHVKPcUSaEM?source=pa&opi=89978449&hl=en-IN" },
+    ],
+    moreLinks: [
       { label: "View on Zomato", href: "https://www.zomato.com/nagpur/pablo-the-art-cafe-lounge-civil-lines" },
       { label: "View on Swiggy", href: "https://www.swiggy.com/city/nagpur/pablo-the-art-cafe-lounge-civil-lines-rest118685" },
-      { label: "View on MakeMyTrip", href: "https://www.makemytrip.com/tripideas/attractions/pablo---the-art-cafe'-lounge" },
+      { label: "View on MakeMyTrip", href: "https://www.makemytrip.com/tripideas/attractions/pablo---the-art-cafe%27-lounge" },
       { label: "View on Tripadvisor", href: "https://www.tripadvisor.in/Restaurant_Review-g662323-d14055664-Reviews-Pablo_The_Art_Cafe_Lounge-Nagpur_Nagpur_District_Maharashtra.html" },
-      { label: "Reserve a table", href: "https://www.google.com/maps/reserve/v/dine/c/aHVKPcUSaEM?source=pa&opi=89978449&hl=en-IN" },
       { label: "View on District", href: "https://www.district.in/dining/nagpur/pablo-the-art-cafe-lounge-civil-lines" },
     ],
   },
@@ -63,10 +64,11 @@ export const brands = [
     type: "Hotel",
     location: "Navi Mumbai",
     summary: "Opened in 2019, carrying Centre Point hospitality to Navi Mumbai.",
+    // From centrepointnavimumbai.com (the hotel's official site).
     image: {
-      src: centrePointNaviMumbaiLogo,
-      alt: "Centre Point Navi Mumbai logo.",
-      focus: "50% 50%",
+      src: naviMumbaiAtrium,
+      alt: "The atrium of Centre Point Navi Mumbai, with timber balconies and pendant lights over the lounge.",
+      focus: "45% 50%",
     },
     links: [{ label: "Official website", href: "https://www.centrepointnavimumbai.com/" }],
   },
@@ -99,11 +101,13 @@ export const brands = [
     links: [
       { label: "Instagram", href: "https://www.instagram.com/dali_theartcafe/" },
       { label: "Directions", href: "https://www.google.com/maps/search/?api=1&query=Enrico+Heights%2C+Wardha+Rd%2C+Jai+Prakash+Nagar%2C+Chatrapati+Nagar%2C+Nagpur%2C+Maharashtra+440015" },
+      { label: "Reserve a table", href: "https://www.google.com/maps/reserve/v/dine/c/Z6cnRxqgpBg?source=pa&opi=89978449&hl=en-IN" },
+    ],
+    moreLinks: [
       { label: "View on Zomato", href: "https://www.zomato.com/nagpur/dali-the-art-cafe-1-wardha-road" },
       { label: "Order on Swiggy", href: "https://www.swiggy.com/city/nagpur/dali-the-art-cafe-wardha-road-rest935064" },
       { label: "View on Swiggy Dineout", href: "https://www.swiggy.com/restaurants/nagpur/wardha-road/dali-the-art-cafe-605020/dineout" },
       { label: "View on District", href: "https://www.district.in/dining/nagpur/dali-the-art-cafe-1-wardha-road" },
-      { label: "Reserve a table", href: "https://www.google.com/maps/reserve/v/dine/c/Z6cnRxqgpBg?source=pa&opi=89978449&hl=en-IN" },
     ],
   },
   {
@@ -113,18 +117,21 @@ export const brands = [
     type: "Poolside restaurant",
     location: "Ramdaspeth, Nagpur",
     summary: "Poolside dining in Nagpur, under an open sky.",
+    // From the High Steaks page on centrepointnagpur.com.
     image: {
-      src: placeholderHighSteaks,
-      alt: "High Steaks Pool Side logo — photography to follow.",
-      placeholder: true,
+      src: highSteaksPool,
+      alt: "High Steaks at night: the rooftop pool roped off beside the dining deck at Hotel Centre Point.",
+      focus: "50% 55%",
     },
     links: [
       { label: "Instagram", href: "https://www.instagram.com/highsteaksnagpur/" },
       { label: "Directions", href: "https://www.google.com/maps/search/?api=1&query=High+Steaks%2C+7th+Floor%2C+Hotel+Centre+Point%2C+24+Central+Bazar+Road%2C+Ramdaspeth%2C+Nagpur%2C+Maharashtra+440010" },
+      { label: "Reserve a table", href: "https://www.google.com/maps/reserve/v/dine/c/TOtM8ekng-s?source=pa&opi=89978449&hl=en-IN" },
+    ],
+    moreLinks: [
       { label: "View on Zomato", href: "https://www.zomato.com/nagpur/high-steaks-pool-side-ramdaspeth" },
       { label: "View on Swiggy Dineout", href: "https://www.swiggy.com/restaurants/nagpur/ramdaspeth/high-steak-hotel-centre-point-603580/dineout" },
       { label: "View on District", href: "https://www.district.in/dining/nagpur/high-steaks-pool-side-ramdaspeth" },
-      { label: "Reserve a table", href: "https://www.google.com/maps/reserve/v/dine/c/TOtM8ekng-s?source=pa&opi=89978449&hl=en-IN" },
     ],
   },
   {
@@ -142,6 +149,8 @@ export const brands = [
     links: [
       { label: "Official page", href: "https://centrepointnagpur.com/freakk-de-bistro/" },
       { label: "Directions", href: "https://www.google.com/maps/search/?api=1&query=Freakk+De+Bistro%2C+Hotel+Centre+Point%2C+24+Central+Bazar+Road%2C+Ramdaspeth%2C+Nagpur%2C+Maharashtra+440010" },
+    ],
+    moreLinks: [
       { label: "View on Zomato", href: "https://www.zomato.com/nagpur/freakk-de-bistro-ramdaspeth" },
       { label: "View on Swiggy Dineout", href: "https://www.swiggy.com/restaurants/freakk-de-bistro-hotel-centre-point-ramdaspeth-nagpur-162612/dineout" },
       { label: "View on District", href: "https://www.district.in/dining/nagpur/freakk-de-bistro-ramdaspeth" },

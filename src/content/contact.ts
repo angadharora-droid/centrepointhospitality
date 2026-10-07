@@ -55,7 +55,7 @@ export const contact = {
     directions: "https://www.google.com/maps/search/?api=1&query=21.1347835%2C79.0762728",
   },
   channels,
-  /** Group-level locations only — not every property address. */
+  /** Group-level locations only. Addresses as published on each hotel's official website. */
   locations: [
     {
       city: "Nagpur",
@@ -71,20 +71,20 @@ export const contact = {
       address: [
         "Building No. 1, DC-1, Thane–Belapur Road",
         "Beside Akshar Blue Chip IT Park, TTC Industrial Area, Turbhe",
-        "Navi Mumbai, Maharashtra 400703",
+        "Navi Mumbai, Maharashtra 400705",
       ],
-      directions: "https://www.google.com/maps/search/?api=1&query=Centre+Point+Navi+Mumbai%2C+Building+No.+1%2C+DC-1%2C+Thane-Belapur+Road%2C+Turbhe%2C+Navi+Mumbai%2C+Maharashtra+400703",
+      directions: "https://www.google.com/maps/search/?api=1&query=Centre+Point+Navi+Mumbai%2C+Building+No.+1%2C+DC-1%2C+Thane-Belapur+Road%2C+Turbhe%2C+Navi+Mumbai%2C+Maharashtra+400705",
     },
     {
       city: "Amravati",
       note: "Centre Point Amravati.",
       website: "https://www.centrepointamravati.com/",
       address: [
-        "New Bypass, near Chatri Talao",
+        "Near Chatri Talav",
         "Dastur Nagar, Amravati",
         "Maharashtra 444606",
       ],
-      directions: "https://www.google.com/maps/search/?api=1&query=New+Bypass%2C+near+Chatri+Talao%2C+Dastur+Nagar%2C+Amravati%2C+Maharashtra+444606",
+      directions: "https://www.google.com/maps/search/?api=1&query=Centre+Point+Amravati%2C+Near+Chatri+Talav%2C+Dastur+Nagar%2C+Amravati%2C+Maharashtra+444606",
     },
   ],
 };

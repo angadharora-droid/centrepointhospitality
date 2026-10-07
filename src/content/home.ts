@@ -1,5 +1,8 @@
 import type { StaticImageData } from "next/image";
-import hotelRoom from "@/assets/hero/hotel-room.jpg";
+import hcpCpSuite from "@/assets/hotel-centre-point/cp-suite.jpg";
+import hcpPalacio from "@/assets/hotel-centre-point/palacio.jpg";
+import hcpPremiumRoom from "@/assets/hotel-centre-point/premium-room.jpg";
+import naviMumbaiExterior from "@/assets/navi-mumbai/exterior.jpg";
 import restaurantMural from "@/assets/hero/restaurant-mural.jpg";
 import rooftopBarDusk from "@/assets/hero/rooftop-bar-dusk.jpg";
 import rooftopDiningNight from "@/assets/hero/rooftop-dining-night.jpg";
@@ -7,10 +10,10 @@ import createBakery from "@/assets/world/create-bakery.jpg";
 import dineArtCafe from "@/assets/world/dine-art-cafe.jpg";
 import experienceDjNight from "@/assets/world/experience-dj-night.jpg";
 import boardroom from "@/assets/journey/boardroom.jpg";
-import pabloEvening from "@/assets/journey/pablo-evening.jpg";
 import teamNamaste from "@/assets/journey/team-namaste.jpg";
 import centrePointAmravatiFacade from "@/assets/portfolio/centre-point-amravati-facade.webp";
 import daliGuests from "@/assets/portfolio/dali-guests.jpg";
+import { contact } from "./contact";
 import { brands, getBrand, type BrandSlug } from "./portfolio";
 import { homepagePress } from "@/data/press";
 import { portfolioCategories, portfolioHref, type PortfolioCategory, type TimelineEntry } from "./types";
@@ -56,8 +59,9 @@ export const hero = {
       scrim: { floor: 0, top: 0 },
     },
     {
-      image: hotelRoom,
-      focus: { mobile: "58% 50%", desktop: "50% 65%" },
+      // The CP Suite at Hotel Centre Point (centrepointnagpur.com).
+      image: hcpCpSuite,
+      focus: { mobile: "48% 50%", desktop: "50% 60%" },
       scrim: { floor: 0.36, top: 0.34 },
     },
     {
@@ -99,8 +103,9 @@ type WorldDetail = {
 const worldDetails: Record<PortfolioCategory, WorldDetail> = {
   stay: {
     descriptor: "Hotels shaped around place, comfort and character.",
-    image: hotelRoom,
-    focus: "62% 55%",
+    // A premium room at Hotel Centre Point (centrepointnagpur.com).
+    image: hcpPremiumRoom,
+    focus: "60% 55%",
   },
   dine: {
     descriptor: "Restaurants and bars built around food, culture and energy.",
@@ -189,14 +194,14 @@ export const atAGlance = {
   stats: [
     // Confirmed: derived from 1988, rounded down to the nearest five years.
     { value: `${heritageYears}+`, label: "Years of hospitality heritage", confirmed: true },
-    // TODO: Confirm final CPH figure before production (site names Nagpur and Navi Mumbai).
-    { value: "XX", label: "Hotels & hospitality assets", confirmed: false },
-    // TODO: Confirm final CPH figure before production (site names 6 dining concepts).
-    { value: "XX+", label: "Restaurants & bars", confirmed: false },
-    // TODO: Confirm final CPH figure before production.
-    { value: "XXX+", label: "People across the group", confirmed: false },
+    // Confirmed: Nagpur, Navi Mumbai and Amravati (contact.ts locations; portfolio.ts properties).
+    { value: String(contact.locations.length), label: "Cities — Nagpur, Navi Mumbai and Amravati", confirmed: true },
+    // Confirmed: "growing to 136 rooms today" — Jasbir Singh Arora's approved biography (people.ts).
+    { value: "136", label: "Rooms at Hotel Centre Point, Nagpur", confirmed: true },
     // Confirmed: Palacio, the pillarless hall at Hotel Centre Point (timeline, 2011).
     { value: "10,000", label: "Sq ft pillarless hall at Palacio", confirmed: true },
+    // TODO: Owner to confirm group-wide figures (hotels & assets, restaurants & bars,
+    // people). They stay hidden until marked confirmed — never show placeholders.
   ] satisfies Stat[],
 };
 
@@ -252,19 +257,21 @@ const milestones: TimelineEntry[] = [
     year: "2011",
     title: "Room to gather.",
     body: "The hotel is renovated for banquets and events, opening Palacio — a 10,000 sq ft pillarless hall, the largest of its kind in Central India at the time.",
+    image: {
+      src: hcpPalacio,
+      alt: "Palacio at Hotel Centre Point, set with round tables beneath a crystal chandelier.",
+      focus: "50% 45%",
+    },
     confirmed: true,
   },
   {
-    // TODO: Confirm final timeline date and copy — the site timeline says 2015,
-    // a leadership bio dates the art cafés to 2017–18.
+    // TODO: Owner to confirm. The current site's timeline lists Pablo under 2015,
+    // but July 2017 coverage describes Pablo still being prepared to open, so
+    // Pablo is not attributed to this year until a verified opening date exists.
+    // TDT, beverage catering and food processing remain as the source gives them.
     year: "2015",
     title: "Beyond the hotel.",
-    body: "Standalone restaurants arrive with Pablo and TDT, alongside beverage catering and food processing.",
-    image: {
-      src: pabloEvening,
-      alt: "A full house on an evening at Pablo, guests gathered around the bar and tables.",
-      focus: "45% 50%",
-    },
+    body: "The group moves into standalone restaurants with TDT, alongside beverage catering and food processing.",
     confirmed: false,
   },
   {
@@ -289,6 +296,11 @@ const milestones: TimelineEntry[] = [
     year: "2019",
     title: "A second city.",
     body: "Centre Point Navi Mumbai opens, alongside an industrial catering unit at Datta Meghe Medical College, Wardha, and a food court plaza.",
+    image: {
+      src: naviMumbaiExterior,
+      alt: "The glass-fronted building of Centre Point Navi Mumbai on the Thane–Belapur Road.",
+      focus: "45% 50%",
+    },
     confirmed: true,
   },
   {
