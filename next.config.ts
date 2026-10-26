@@ -1,8 +1,12 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
+  // Minimal server (`npm start` runs .next/standalone/server.js): it loads only
+  // the traced files, which roughly halves the memory Railway bills for.
+  output: "standalone",
   images: {
-    formats: ["image/avif", "image/webp"],
+    // WebP only: AVIF encoding is the main memory spike on the server.
+    formats: ["image/webp"],
   },
   redirects() {
     return [
